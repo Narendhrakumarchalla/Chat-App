@@ -48,11 +48,12 @@ app.use('/api/user', userRoutes)
 app.use('/api/message', messageRoutes)
 
 
-connectDB()
-
 app.get('/' , (req,res)=>{
     res.send("Hello")
 })
+
+// Connect to the database
+connectDB()
 
 if(process.env.NODE_ENV !== 'production') {
     const port = process.env.PORT || 4000
