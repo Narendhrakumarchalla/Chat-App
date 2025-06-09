@@ -54,8 +54,12 @@ app.get('/' , (req,res)=>{
     res.send("Hello")
 })
 
-const port = process.env.PORT || 4000
+if(process.env.NODE_ENV !== 'production') {
+    const port = process.env.PORT || 4000
+    server.listen(port , ()=>{
+        console.log('Server connected successfully');
+    })
+}
 
-server.listen(port , ()=>{
-    console.log('Server connected successfully');
-})
+// Export the server for testing or other purposes
+export default server
