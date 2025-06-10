@@ -11,8 +11,7 @@ const LoginPage = () => {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [isDataSubmitted, setIsDataSubmitted] = useState(false)
   const [bio , setBio] = useState("")
-  const navigate = useNavigate()
-
+  
   const {login}=useContext(AuthContext) 
 
   const submitHandler = (e)=>{
